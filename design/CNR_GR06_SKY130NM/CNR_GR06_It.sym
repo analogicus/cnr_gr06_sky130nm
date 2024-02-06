@@ -405,6 +405,7 @@ C {devices/lab_wire.sym} 1060 -720 0 0 {name=p7 sig_type=std_logic lab=VCP}
 C {devices/lab_wire.sym} 1080 -820 0 0 {name=p8 sig_type=std_logic lab=VBP}
 C {devices/lab_wire.sym} 1560 -760 0 0 {name=p9 sig_type=std_logic lab=VDS[4:0]}
 C {CNR_ATR_SKY130NM/CNRATR_PCH_8C12F0.sym} 1270 -820 0 0 {name=x1[15:0]}
+C {CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 1270 -720 0 0 {name=x4[15:0]}
 C {sky130_fd_pr/pnp_05v5.sym} 1290 -320 0 0 {name=Q3
 model=pnp_05v5_W3p40L3p40
 m=1
