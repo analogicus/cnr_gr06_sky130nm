@@ -19,17 +19,17 @@ lab=#net1}
 N 490 -520 570 -520 {
 lab=#net1}
 N 490 -740 490 -610 {
-lab=VDD}
+lab=VDD_1V8}
 N 490 -740 1240 -740 {
-lab=VDD}
+lab=VDD_1V8}
 N 1240 -740 1240 -610 {
-lab=VDD}
+lab=VDD_1V8}
 N 750 -740 750 -610 {
-lab=VDD}
+lab=VDD_1V8}
 N 980 -740 980 -610 {
-lab=VDD}
+lab=VDD_1V8}
 N 850 -890 850 -740 {
-lab=VDD}
+lab=VDD_1V8}
 N 490 -360 490 -300 {
 lab=GND}
 N 490 -300 1240 -300 {
@@ -51,7 +51,7 @@ lab=#net2}
 N 400 -390 450 -390 {
 lab=V1}
 N 1280 -390 1320 -390 {
-lab=VDD}
+lab=V2}
 C {cborder/border_s.sym} 1250 -170 0 0 {
 user="wulff"
 company="wulff"}
@@ -70,9 +70,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/ipin.sym} 850 -890 0 0 {name=p1 lab=VDD
+C {devices/ipin.sym} 850 -890 0 0 {name=p1 lab=VDD_1V8
 }
-C {devices/ipin.sym} 490 -190 0 0 {name=p3 lab=GND}
+C {devices/ipin.sym} 490 -190 0 0 {name=p3 lab=VSS}
 C {sky130_fd_pr/nfet3_01v8.sym} 730 -580 0 0 {name=M1
 L=0.15
 W=1

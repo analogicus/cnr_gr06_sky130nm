@@ -1,0 +1,12 @@
+* Measure CNR_GR06
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+print (I1)
+print (I2)
+
+echo "MEAS_END"
+.endc
