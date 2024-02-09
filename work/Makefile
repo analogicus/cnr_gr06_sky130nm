@@ -15,6 +15,6 @@ LIB=CNR_GR06_SKY130NM
 CELL=CNR_GR06
 
 #- Provide cells you want to check for the lvsall drcall commands
-CELLS = CNR_GR00
+CELLS = CNR_GR06
 
 include ../tech/make/core.make
