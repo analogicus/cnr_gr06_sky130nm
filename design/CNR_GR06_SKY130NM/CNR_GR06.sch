@@ -30,6 +30,8 @@ N 890 -790 930 -790 {
 lab=I2}
 N 890 -770 930 -770 {
 lab=I1}
+N 540 -820 540 -770 {}
+N 540 -750 540 -710 {}
 C {cborder/border_s.sym} 1250 -170 0 0 {
 user="wulff"
 company="wulff"}
@@ -40,3 +42,7 @@ C {devices/opin.sym} 930 -790 0 0 {name=p3 lab=I2
 C {devices/opin.sym} 930 -770 0 0 {name=p4 lab=I1}
 C {CNR_GR06_SKY130NM/CNR_GR06_test.sym} 380 -760 0 0 {name=x1}
 C {CNR_GR06_SKY130NM/CNR_GR06_V_to_I.sym} 740 -760 0 0 {name=x2}
+C {devices/opin.sym} 540 -820 0 0 {name=p5 lab=Vn
+}
+C {devices/opin.sym} 540 -710 0 0 {name=p6 lab=Vp
+}

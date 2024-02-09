@@ -7,6 +7,8 @@ echo "MEAS_START"
 
 print (I1)
 print (I2)
+print (Vp)
+print (Vn)
 
 echo "MEAS_END"
 .endc
