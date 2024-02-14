@@ -49,22 +49,35 @@ lab=#net2}
 N 1130 -520 1240 -520 {
 lab=#net2}
 N 400 -390 450 -390 {
-lab=V1}
+lab=V11}
 N 1280 -390 1320 -390 {
 lab=V2}
-N 490 -390 520 -390 {}
-N 520 -390 520 -300 {}
-N 750 -580 980 -580 {}
-N 870 -580 870 -300 {}
-N 1190 -390 1240 -390 {}
-N 1190 -390 1190 -300 {}
-N 1240 -580 1270 -580 {}
-N 1270 -580 1310 -580 {}
-N 1310 -580 1310 -300 {}
-N 1240 -300 1310 -300 {}
-N 430 -580 490 -580 {}
-N 430 -580 430 -300 {}
-N 430 -300 490 -300 {}
+N 490 -390 520 -390 {
+lab=VSS}
+N 520 -390 520 -300 {
+lab=VSS}
+N 750 -580 980 -580 {
+lab=VSS}
+N 870 -580 870 -300 {
+lab=VSS}
+N 1190 -390 1240 -390 {
+lab=VSS}
+N 1190 -390 1190 -300 {
+lab=VSS}
+N 1240 -580 1270 -580 {
+lab=VSS}
+N 1270 -580 1310 -580 {
+lab=VSS}
+N 1310 -580 1310 -300 {
+lab=VSS}
+N 1240 -300 1310 -300 {
+lab=VSS}
+N 430 -580 490 -580 {
+lab=VSS}
+N 430 -580 430 -300 {
+lab=VSS}
+N 430 -300 490 -300 {
+lab=VSS}
 C {cborder/border_s.sym} 1250 -170 0 0 {
 user="wulff"
 company="wulff"}
@@ -73,9 +86,9 @@ C {devices/ipin.sym} 850 -890 0 0 {name=p1 lab=VDD_1V8
 C {devices/ipin.sym} 490 -190 0 0 {name=p3 lab=VSS}
 C {devices/opin.sym} 750 -490 0 0 {name=p2 lab=I1}
 C {devices/opin.sym} 980 -490 0 0 {name=p4 lab=I2}
-C {devices/ipin.sym} 400 -390 0 0 {name=p5 lab=V1
+C {devices/ipin.sym} 400 -390 0 0 {name=p5 lab=V11
 }
-C {devices/ipin.sym} 1320 -390 0 1 {name=p6 lab=V2
+C {devices/ipin.sym} 1320 -390 0 1 {name=p6 lab=V22
 
 }
 C {SUN_TR_SKY130NM/SUNTR_NCHLCM.sym} 450 -390 0 0 {name=x2 }

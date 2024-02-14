@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut CNR_GR06
-XDUT  VDD_1V8 VSS I2 I1 Vn Vp _test VDD_1V8 Vn Vp VSS _V_to_I VDD_1V8 I2 I1 V2 V1 VSS  CNR_GR06
+XDUT  VDD_1V8 VSS I2 I1 Vn Vp _test VDD_1V8 Vn Vp VSS _V_to_I VDD_1V8 I2 I1 V22 V11 VSS  CNR_GR06
