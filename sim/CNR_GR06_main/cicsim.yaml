@@ -2,5 +2,5 @@ corner:
   Lay: ''
   Sch: ''
 ngspice:
-  library: CNR_GR06_SKY130NM
+  library: CNR_GR06SKY130NM
   cell: CNR_GR06_main
