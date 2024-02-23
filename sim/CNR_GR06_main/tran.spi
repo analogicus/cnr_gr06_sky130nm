@@ -18,7 +18,7 @@
 *-----------------------------------------------------------------
 .param TRF = 100p
 
-.param t_start = 1u
+.param t_start = 0.5u
 .param t_start_del = {t_start + TRF}
 
 *- 8 MHz clock frequency
@@ -34,6 +34,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0  dc 0
 VDD  VDD_1V8 0 dc {AVDD}
+VT1  VT1 0 dc {AVDD}
+VT2  VT2 0 SIN(0 0.5 1000000 0 0)
 
 VCLK Clk 0 dc 0 pulse 0 {AVDD} {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
@@ -66,7 +68,7 @@ set color0=white
 set color1=black
 unset askquit
 
-tran 0.5u 3u 0.5u
+tran 0.1u 10u 0.5u
 
 write
 quit

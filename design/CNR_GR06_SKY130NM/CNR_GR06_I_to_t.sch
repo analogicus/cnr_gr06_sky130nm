@@ -10,8 +10,6 @@ N 710 -130 810 -130 {
 lab=Vop}
 N 710 -110 810 -110 {
 lab=Von}
-N -100 -380 -10 -380 {
-lab=VSS}
 N -100 -380 -100 -330 {
 lab=VSS}
 N -100 -300 70 -300 {
@@ -40,8 +38,6 @@ N -320 -210 -210 -210 {
 lab=I1}
 N 160 -210 250 -210 {
 lab=#net3}
-N -100 240 -10 240 {
-lab=VSS}
 N -100 190 -100 240 {
 lab=VSS}
 N -100 160 70 160 {
@@ -192,3 +188,5 @@ C {devices/lab_wire.sym} -140 160 0 0 {name=p28 sig_type=std_logic lab=Clk_2}
 C {devices/lab_wire.sym} 130 110 0 1 {name=p29 sig_type=std_logic lab=Clk_2}
 C {devices/lab_wire.sym} 130 -250 0 1 {name=p30 sig_type=std_logic lab=Clk_2}
 C {devices/lab_wire.sym} -140 -300 0 0 {name=p31 sig_type=std_logic lab=Clk_2}
+C {devices/lab_wire.sym} -100 -380 0 1 {name=p32 sig_type=std_logic lab=DAC-}
+C {devices/lab_wire.sym} -100 240 0 1 {name=p33 sig_type=std_logic lab=DAC+}
