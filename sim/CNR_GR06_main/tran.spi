@@ -16,15 +16,26 @@
 *-----------------------------------------------------------------
 * PARAMETERS
 *-----------------------------------------------------------------
-.param TRF = 10p
+.param TRF = 100p
 
+.param t_start = 1u
+.param t_start_del = {t_start + TRF}
+
+*- 8 MHz clock frequency
+.param PERIOD_CLK = 200n
+
+*- 25% duty-cycle clock
+.param PW_CLK = PERIOD_CLK/2
+
+*- Supply, vdda is set in includes
 .param AVDD = {vdda}
-
 *-----------------------------------------------------------------
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0  dc 0
 VDD  VDD_1V8 0 dc {AVDD}
+
+VCLK Clk 0 dc 0 pulse 0 {AVDD} {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
 *-----------------------------------------------------------------
 * DUT
@@ -55,9 +66,8 @@ set color0=white
 set color1=black
 unset askquit
 
-optran 1 1 1 10n 10u 0
+tran 0.5u 3u 0.5u
 
-dc TEMP -40 125 5
 write
 quit
 

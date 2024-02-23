@@ -14,8 +14,6 @@ N -730 390 -660 390 {
 lab=VSS}
 N -660 390 -230 390 {
 lab=VSS}
-N -230 -40 -230 390 {
-lab=VSS}
 N -660 -310 -260 -310 {
 lab=VDD_1V8}
 N -260 -310 -260 -120 {
@@ -36,10 +34,6 @@ N -260 -120 -260 -110 {
 lab=VDD_1V8}
 N -260 -110 -180 -110 {
 lab=VDD_1V8}
-N -230 -50 -230 -40 {
-lab=VSS}
-N -230 -50 -180 -50 {
-lab=VSS}
 N 120 -110 180 -110 {
 lab=Vop}
 N 120 -90 180 -90 {
@@ -50,6 +44,20 @@ N -660 -70 -650 -70 {
 lab=VSS}
 N -660 -70 -660 390 {
 lab=VSS}
+N 120 -70 180 -70 {
+lab=Clk_1}
+N 120 -50 180 -50 {
+lab=Clk_2}
+N -230 -30 -230 390 {
+lab=VSS}
+N -230 -30 -180 -30 {
+lab=VSS}
+N -730 440 -260 440 {
+lab=Clk}
+N -260 -50 -260 440 {
+lab=Clk}
+N -260 -50 -180 -50 {
+lab=Clk}
 C {cborder/border_s.sym} 380 350 0 0 {
 user="wulff"
 company="wulff"}
@@ -60,9 +68,13 @@ C {devices/opin.sym} -350 -150 0 0 {name=p5 lab=Vn
 }
 C {devices/opin.sym} -350 0 0 0 {name=p3 lab=Vp
 }
-C {CNR_GR06_SKY130NM/CNR_GR06_I_to_t.sym} -30 -70 0 0 {name=x2}
 C {devices/opin.sym} 180 -110 0 0 {name=p4 lab=Vop
 }
 C {devices/opin.sym} 180 -90 0 0 {name=p6 lab=Von
 }
 C {CNR_GR06_SKY130NM/CNR_GR06.sym} -500 -60 0 0 {name=x1}
+C {CNR_GR06_SKY130NM/CNR_GR06_I_to_t.sym} -30 -70 0 0 {name=x2}
+C {devices/opin.sym} 180 -70 0 0 {name=p7 lab=Clk_1
+}
+C {devices/opin.sym} 180 -50 0 0 {name=p8 lab=Clk_2}
+C {devices/ipin.sym} -730 440 0 0 {name=p9 lab=Clk}
