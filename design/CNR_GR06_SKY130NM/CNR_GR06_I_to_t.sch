@@ -11,7 +11,7 @@ lab=Vop}
 N 710 -110 810 -110 {
 lab=Von}
 N -100 -380 -100 -330 {
-lab=VSS}
+lab=DAC-}
 N -100 -300 70 -300 {
 lab=VSS}
 N -10 -380 -10 -300 {
@@ -39,7 +39,7 @@ lab=I1}
 N 160 -210 250 -210 {
 lab=#net3}
 N -100 190 -100 240 {
-lab=VSS}
+lab=DAC+}
 N -100 160 70 160 {
 lab=VSS}
 N -10 160 -10 240 {
@@ -126,13 +126,25 @@ N -260 410 -220 410 {
 lab=VSS}
 N -250 370 -220 370 {
 lab=VDD_1V8}
-N 80 370 110 370 {
-lab=Clk_1}
-N 80 390 110 390 {
-lab=Clk_2}
 N 100 320 100 370 {
 lab=Clk_1}
 N 100 390 100 440 {
+lab=Clk_2}
+N -300 -310 -250 -310 {
+lab=DAC-}
+N -300 -340 -250 -340 {
+lab=DAC+}
+N 100 390 110 390 {
+lab=Clk_2}
+N 100 370 110 370 {
+lab=Clk_1}
+N 390 -110 410 -110 {
+lab=#net7}
+N 390 -50 410 -50 {
+lab=#net8}
+N 80 370 100 370 {
+lab=Clk_1}
+N 80 390 100 390 {
 lab=Clk_2}
 C {devices/ipin.sym} -320 70 0 0 {name=p2 lab=I2}
 C {devices/ipin.sym} -300 -380 0 0 {name=p3 lab=VDD_1V8}
@@ -188,5 +200,11 @@ C {devices/lab_wire.sym} -140 160 0 0 {name=p28 sig_type=std_logic lab=Clk_2}
 C {devices/lab_wire.sym} 130 110 0 1 {name=p29 sig_type=std_logic lab=Clk_2}
 C {devices/lab_wire.sym} 130 -250 0 1 {name=p30 sig_type=std_logic lab=Clk_2}
 C {devices/lab_wire.sym} -140 -300 0 0 {name=p31 sig_type=std_logic lab=Clk_2}
-C {devices/lab_wire.sym} -100 -380 0 1 {name=p32 sig_type=std_logic lab=DAC-}
-C {devices/lab_wire.sym} -100 240 0 1 {name=p33 sig_type=std_logic lab=DAC+}
+C {devices/ipin.sym} -300 -340 0 0 {name=p34 lab=DAC+
+}
+C {devices/ipin.sym} -300 -310 0 0 {name=p35 lab=DAC-
+}
+C {devices/lab_wire.sym} -250 -340 0 1 {name=p36 sig_type=std_logic lab=DAC+}
+C {devices/lab_wire.sym} -250 -310 0 1 {name=p37 sig_type=std_logic lab=DAC-}
+C {devices/lab_wire.sym} -100 240 0 1 {name=p32 sig_type=std_logic lab=DAC+}
+C {devices/lab_wire.sym} -100 -380 0 1 {name=p33 sig_type=std_logic lab=DAC-}
