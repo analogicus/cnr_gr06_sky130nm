@@ -52,10 +52,6 @@ N -260 440 370 440 {
 lab=Clk}
 N 310 -70 310 -50 {
 lab=VSS}
-N 170 -150 180 -150 {
-lab=Von}
-N 160 -170 180 -170 {
-lab=Vop}
 N 250 -290 340 -290 {
 lab=DACN}
 N 260 40 340 40 {
@@ -65,37 +61,17 @@ lab=VDD_1V8}
 N -250 -310 -250 -150 {
 lab=VDD_1V8}
 N -250 -130 -180 -130 {
-lab=#net1}
+lab=DACN}
 N -250 -110 -180 -110 {
 lab=DACP}
 N 120 -150 150 -150 {
 lab=Vop}
-N 150 -150 150 -110 {
-lab=Vop}
-N 150 -100 150 -90 {
-lab=Von}
-N 140 -100 150 -100 {
-lab=Von}
-N 140 -130 140 -100 {
-lab=Von}
 N 120 -130 140 -130 {
 lab=Von}
-N 170 -150 170 -90 {
-lab=Von}
-N 150 -170 150 -150 {
-lab=Vop}
-N 150 -170 160 -170 {
-lab=Vop}
 N 140 -70 180 -70 {
-lab=Clk_1}
-N 120 -110 140 -70 {
 lab=Clk_1}
 N 120 -90 120 -60 {
 lab=Clk_2}
-N 120 -60 180 -50 {
-lab=Clk_2}
-N 150 -90 170 -90 {
-lab=Von}
 N 310 -210 310 -150 {
 lab=VDD_1V8}
 N 310 -150 320 -150 {
@@ -120,8 +96,6 @@ N 260 -110 310 -110 {
 lab=Vop}
 N 170 -90 260 -90 {
 lab=Von}
-N 150 -110 260 -110 {
-lab=Vop}
 N 640 100 650 100 {
 lab=VSS}
 N 640 40 650 40 {
@@ -142,6 +116,34 @@ N 670 -250 670 -150 {
 lab=Vocn}
 N 640 -270 670 -270 {
 lab=Vdref}
+N 120 -50 180 -50 {
+lab=Clk_2}
+N 120 -60 120 -50 {
+lab=Clk_2}
+N 120 -110 130 -110 {
+lab=Clk_1}
+N 130 -110 130 -70 {
+lab=Clk_1}
+N 130 -70 140 -70 {
+lab=Clk_1}
+N 140 -130 150 -130 {
+lab=Von}
+N 150 -130 150 -90 {
+lab=Von}
+N 150 -90 170 -90 {
+lab=Von}
+N 150 -150 170 -150 {
+lab=Vop}
+N 170 -150 170 -110 {
+lab=Vop}
+N 170 -110 260 -110 {
+lab=Vop}
+N 200 -150 200 -90 {
+lab=Von}
+N 170 -170 200 -170 {
+lab=Vop}
+N 170 -170 170 -150 {
+lab=Vop}
 C {cborder/border_s.sym} 380 350 0 0 {
 user="wulff"
 company="wulff"}
@@ -152,9 +154,9 @@ C {devices/opin.sym} -350 -150 0 0 {name=p5 lab=Vn
 }
 C {devices/opin.sym} -350 0 0 0 {name=p3 lab=Vp
 }
-C {devices/opin.sym} 180 -170 0 0 {name=p4 lab=Vop
+C {devices/opin.sym} 200 -170 0 0 {name=p4 lab=Vop
 }
-C {devices/opin.sym} 180 -150 0 0 {name=p6 lab=Von
+C {devices/opin.sym} 200 -150 0 0 {name=p6 lab=Von
 }
 C {CNR_GR06_SKY130NM/CNR_GR06.sym} -500 -60 0 0 {name=x1}
 C {CNR_GR06_SKY130NM/CNR_GR06_I_to_t.sym} -30 -90 0 0 {name=x2}
@@ -188,3 +190,5 @@ C {devices/lab_wire.sym} 260 40 0 0 {name=p17 sig_type=std_logic lab=DACP
 C {CNR_GR06_SKY130NM/dac_n.sym} 490 -260 0 1 {name=x4}
 C {devices/ipin.sym} 700 60 0 1 {name=p19 lab=Vdref}
 C {devices/lab_wire.sym} 650 -270 0 1 {name=p21 sig_type=std_logic lab=Vdref}
+C {devices/lab_wire.sym} -250 -130 0 0 {name=p18 sig_type=std_logic lab=DACN
+}
