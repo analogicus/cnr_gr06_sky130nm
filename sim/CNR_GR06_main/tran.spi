@@ -22,7 +22,7 @@
 .param t_start_del = {t_start + TRF}
 
 *- 8 MHz clock frequency
-.param PERIOD_CLK = 250n
+.param PERIOD_CLK = 400n
 
 *- 25% duty-cycle clock
 .param PW_CLK = PERIOD_CLK/2
@@ -33,16 +33,19 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0  dc 0
-VDD  VDD_1V8 0 dc {AVDD}
+VDD  VDD_1V8 0 dc 1.2
 Vdref Vdref 0 dc 0.8
 
-*VT2 VT2 0 dc 0.2
-*VT1 VT1 0 dc 1.2
+VT2 VT2 0 dc 0.2
+VT1 VT1 0 dc 0.8
 
-VT2  VT2 0 SIN(0.6 0.6 50000 0 0 180)
-VT1  VT1 0 SIN(0.6 0.6 50000 0 0)
+*VT2  VT2 0 SIN(0 0.150 50000 0 0 180)
+*VT1  VT1 0 SIN(0 0.150 50000 0 0)
 
-VCLK Clk 0 dc 0 pulse 0 {AVDD} {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
+VBP VBP 0 dc 0.144
+VBN VBN 0 dc 1.08
+
+VCLK Clk 0 dc 0 pulse 0 1.2 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
 *-----------------------------------------------------------------
 * DUT
@@ -72,8 +75,7 @@ set color0=white
 set color1=black
 unset askquit
 
-tran 0.1u 15u 0.5u
-
+tran 0.1u 10u 0.5u
 write
 quit
 

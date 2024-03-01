@@ -65,11 +65,11 @@ lab=Vop}
 N -180 -10 200 -10 {
 lab=#net4}
 N 0 -150 160 -150 {
-lab=VDD_1V8}
+lab=Vbiasp}
 N -40 290 200 290 {
 lab=#net3}
 N -0 360 160 360 {
-lab=VSS}
+lab=Vbiasn}
 N 200 -110 570 -110 {
 lab=#net4}
 N -40 -30 390 -30 {
@@ -166,20 +166,18 @@ N -70 360 -70 410 {
 lab=VSS}
 N -70 410 -40 410 {
 lab=VSS}
-N 50 -200 50 -150 {
-lab=VDD_1V8}
-N 50 360 50 460 {
-lab=VSS}
+N 80 -150 80 -140 {
+lab=Vbiasp}
 C {cborder/border_s.sym} 430 460 0 0 {
-user="wulff"
-company="wulff"}
+user="njaalru"
+company="GR06"}
 C {devices/ipin.sym} -540 -200 0 0 {name=p3 lab=VDD_1V8}
 C {devices/ipin.sym} -530 460 0 0 {name=p4 lab=VSS}
 C {devices/opin.sym} 700 90 0 0 {name=p5 lab=Vop
 }
 C {devices/ipin.sym} -90 90 0 0 {name=p6 lab=Vn}
 C {devices/ipin.sym} 250 90 0 1 {name=p7 lab=Vp}
-C {devices/ipin.sym} 80 -150 3 0 {name=p8 lab=Vbiasp}
+C {devices/ipin.sym} 80 -140 3 0 {name=p8 lab=Vbiasp}
 C {devices/ipin.sym} 90 360 3 0 {name=p9 lab=Vbiasn}
 C {devices/opin.sym} -450 90 0 1 {name=p10 lab=Von
 }

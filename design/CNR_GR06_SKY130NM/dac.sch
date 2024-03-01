@@ -110,8 +110,6 @@ C {devices/lab_wire.sym} -100 -180 1 1 {name=p6 sig_type=std_logic lab=VDD_1V8}
 C {devices/ipin.sym} -490 -30 0 0 {name=p7 lab=Vid}
 C {devices/opin.sym} 110 -30 0 0 {name=p20 lab=Vod
 }
-C {devices/ipin.sym} -170 -170 0 0 {name=p9 lab=Vdref
-}
 C {sky130_fd_pr/pfet_01v8.sym} -340 -180 0 0 {name=M3
 L=1
 W=20
@@ -197,3 +195,4 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/lab_wire.sym} -200 100 0 1 {name=p8 sig_type=std_logic lab=VSS}
+C {devices/ipin.sym} -170 -170 1 0 {name=p9 lab=Vdref}

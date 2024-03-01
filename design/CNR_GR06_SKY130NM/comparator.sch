@@ -179,9 +179,9 @@ N 270 -490 270 -370 {
 lab=VDD_1V8}
 N 170 -370 170 -300 {
 lab=VDD_1V8}
-C {cborder/border_s.sym} -150 290 0 1 {
-user="wulff"
-company="wulff"}
+C {cborder/border_s.sym} 630 290 0 0 {
+user="njaalru"
+company="GR06"}
 C {devices/ipin.sym} -160 -490 0 0 {name=p3 lab=VDD_1V8}
 C {devices/ipin.sym} -170 250 0 0 {name=p4 lab=VSS}
 C {devices/lab_wire.sym} 150 -240 0 1 {name=p2 sig_type=std_logic lab=VDD_1V8}
