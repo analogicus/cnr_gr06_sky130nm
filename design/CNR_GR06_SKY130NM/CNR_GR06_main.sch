@@ -29,12 +29,10 @@ lab=VSS}
 N -730 440 -260 440 {
 lab=Clk}
 N -240 -30 -180 -30 {
-lab=VT2}
+lab=#net1}
 N -240 -90 -180 -90 {
-lab=VT1}
+lab=#net2}
 N 310 -310 310 -210 {
-lab=VDD_1V8}
-N -260 -310 310 -310 {
 lab=VDD_1V8}
 N -230 390 310 390 {
 lab=VSS}
@@ -71,17 +69,15 @@ lab=VDD_1V8}
 N 310 -70 320 -70 {
 lab=VSS}
 N 310 -90 320 -90 {
-lab=#net1}
+lab=Von}
 N 310 -110 320 -110 {
-lab=#net2}
+lab=Vop}
 N 290 -130 320 -130 {
 lab=Clk}
 N 290 -130 290 440 {
 lab=Clk}
-N 620 -150 670 -150 {
-lab=Vocn}
 N 300 -90 310 -90 {
-lab=#net1}
+lab=Von}
 N 170 -90 260 -90 {
 lab=Von}
 N 640 100 650 100 {
@@ -136,6 +132,26 @@ N -190 10 -190 390 {
 lab=VSS}
 N -190 10 -180 10 {
 lab=VSS}
+N 620 -150 640 -150 {
+lab=Vocn}
+N -260 -310 310 -310 {
+lab=VDD_1V8}
+N -350 -50 -260 -50 {
+lab=#net1}
+N -260 -50 -260 -30 {
+lab=#net1}
+N -260 -30 -240 -30 {
+lab=#net1}
+N -260 -90 -240 -90 {
+lab=#net2}
+N -260 -90 -260 -70 {
+lab=#net2}
+N -350 -70 -260 -70 {
+lab=#net2}
+N 260 -110 310 -110 {
+lab=Vop}
+N 260 -90 300 -90 {
+lab=Von}
 C {cborder/border_s.sym} 380 350 0 0 {
 user="njaalru"
 company="GR06"}
@@ -156,11 +172,11 @@ C {devices/opin.sym} 180 -70 0 0 {name=p7 lab=Clk_1
 }
 C {devices/opin.sym} 180 -50 0 0 {name=p8 lab=Clk_2}
 C {devices/ipin.sym} -730 440 0 0 {name=p9 lab=Clk}
-C {devices/ipin.sym} -240 -90 0 0 {name=p10 lab=VT1
+C {devices/ipin.sym} -240 10 0 0 {name=p10 lab=VT1
 }
-C {devices/ipin.sym} -240 -30 0 0 {name=p11 lab=VT2
+C {devices/ipin.sym} -240 -10 0 0 {name=p11 lab=VT2
 }
-C {devices/opin.sym} 670 -150 0 0 {name=p12 lab=Vocn
+C {devices/opin.sym} 640 -150 0 0 {name=p12 lab=Vocn
 }
 C {devices/lab_wire.sym} 650 40 0 1 {name=p13 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} 650 100 0 1 {name=p15 sig_type=std_logic lab=VSS}
