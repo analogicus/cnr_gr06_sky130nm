@@ -22,10 +22,10 @@
 .param t_start_del = {t_start + TRF}
 
 *- 8 MHz clock frequency
-.param PERIOD_CLK = 250n
+*.param PERIOD_CLK = 250n
 
 *- 25% duty-cycle clock
-.param PW_CLK = PERIOD_CLK/2
+*.param PW_CLK = PERIOD_CLK/2
 
 *- Supply, vdda is set in includes
 .param AVDD = {vdda}
@@ -42,7 +42,7 @@ Vdref Vdref 0 dc 0.8
 VT2  VT2 0 SIN(0.6 0.6 50000 0 0 180)
 VT1  VT1 0 SIN(0.6 0.6 50000 0 0)
 
-VCLK Clk 0 dc 0 pulse 0 {AVDD} {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
+*VCLK Clk 0 dc 0 pulse 0 {AVDD} {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
 *-----------------------------------------------------------------
 * DUT
@@ -72,8 +72,9 @@ set color0=white
 set color1=black
 unset askquit
 
-tran 0.1u 15u 0.5u
+optran 1 1 1 10n 1u 0
 
+dc TEMP -40 125 5
 write
 quit
 
