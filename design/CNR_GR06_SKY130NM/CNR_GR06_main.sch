@@ -29,9 +29,9 @@ lab=VSS}
 N -730 440 -260 440 {
 lab=Clk}
 N -240 -30 -180 -30 {
-lab=#net1}
+lab=VT1}
 N -240 -90 -180 -90 {
-lab=#net2}
+lab=VT2}
 N 310 -310 310 -210 {
 lab=VDD_1V8}
 N -230 390 310 390 {
@@ -69,17 +69,15 @@ lab=VDD_1V8}
 N 310 -70 320 -70 {
 lab=VSS}
 N 310 -90 320 -90 {
-lab=Von}
+lab=#net1}
 N 310 -110 320 -110 {
-lab=Vop}
+lab=#net2}
 N 290 -130 320 -130 {
 lab=Clk}
 N 290 -130 290 440 {
 lab=Clk}
 N 300 -90 310 -90 {
-lab=Von}
-N 170 -90 260 -90 {
-lab=Von}
+lab=#net1}
 N 640 100 650 100 {
 lab=VSS}
 N 640 40 650 40 {
@@ -116,8 +114,6 @@ N 150 -150 170 -150 {
 lab=Vop}
 N 170 -150 170 -110 {
 lab=Vop}
-N 170 -110 260 -110 {
-lab=Vop}
 N 200 -150 200 -90 {
 lab=Von}
 N 170 -170 200 -170 {
@@ -136,21 +132,19 @@ N 620 -150 640 -150 {
 lab=Vocn}
 N -260 -310 310 -310 {
 lab=VDD_1V8}
-N -350 -50 -260 -50 {
-lab=#net1}
 N -260 -50 -260 -30 {
-lab=#net1}
+lab=VT1}
 N -260 -30 -240 -30 {
-lab=#net1}
+lab=VT1}
 N -260 -90 -240 -90 {
-lab=#net2}
+lab=VT2}
 N -260 -90 -260 -70 {
-lab=#net2}
-N -350 -70 -260 -70 {
-lab=#net2}
+lab=VT2}
 N 260 -110 310 -110 {
-lab=Vop}
+lab=#net2}
 N 260 -90 300 -90 {
+lab=#net1}
+N 170 -90 200 -90 {
 lab=Von}
 C {cborder/border_s.sym} 380 350 0 0 {
 user="njaalru"
@@ -172,9 +166,9 @@ C {devices/opin.sym} 180 -70 0 0 {name=p7 lab=Clk_1
 }
 C {devices/opin.sym} 180 -50 0 0 {name=p8 lab=Clk_2}
 C {devices/ipin.sym} -730 440 0 0 {name=p9 lab=Clk}
-C {devices/ipin.sym} -240 10 0 0 {name=p10 lab=VT1
+C {devices/ipin.sym} -260 -50 0 0 {name=p10 lab=VT1
 }
-C {devices/ipin.sym} -240 -10 0 0 {name=p11 lab=VT2
+C {devices/ipin.sym} -260 -70 0 0 {name=p11 lab=VT2
 }
 C {devices/opin.sym} 640 -150 0 0 {name=p12 lab=Vocn
 }
