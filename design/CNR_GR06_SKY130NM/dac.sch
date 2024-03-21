@@ -103,10 +103,6 @@ C {devices/ipin.sym} -320 -230 1 0 {name=p3 lab=VDD_1V8}
 C {devices/ipin.sym} -320 150 3 0 {name=p4 lab=VSS}
 C {devices/lab_wire.sym} -290 -180 0 1 {name=p12 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} -300 110 0 1 {name=p15 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} -100 70 1 1 {name=p1 sig_type=std_logic lab=VDD_1V8}
-C {devices/lab_wire.sym} -100 -130 3 1 {name=p2 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} -100 150 3 1 {name=p5 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} -100 -180 1 1 {name=p6 sig_type=std_logic lab=VDD_1V8}
 C {devices/ipin.sym} -490 -30 0 0 {name=p7 lab=Vid}
 C {devices/opin.sym} 110 -30 0 0 {name=p20 lab=Vod
 }
@@ -138,7 +134,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -100 190 1 1 {name=M1
+C {sky130_fd_pr/nfet_01v8.sym} -100 190 3 0 {name=M1
 L=1
 W=10
 nf=1
@@ -152,9 +148,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -100 -90 1 1 {name=M2
+C {sky130_fd_pr/nfet_01v8.sym} -100 -90 3 0 {name=M2
 L=1
-W=10
+W=6
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
@@ -195,4 +191,10 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/lab_wire.sym} -200 100 0 1 {name=p8 sig_type=std_logic lab=VSS}
-C {devices/ipin.sym} -170 -170 1 0 {name=p9 lab=Vdref}
+C {devices/lab_wire.sym} -100 -180 0 1 {name=p1 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_wire.sym} -100 70 0 1 {name=p2 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_wire.sym} -100 150 0 1 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} -100 -130 0 1 {name=p6 sig_type=std_logic lab=VSS}
+C {devices/ipin.sym} -490 -30 0 0 {name=p9 lab=Vid}
+C {devices/lab_wire.sym} -215 -270 0 1 {name=p10 sig_type=std_logic lab=VDD_1V8}
+C {devices/ipin.sym} -170 -170 0 0 {name=p19 lab=Vdref}
