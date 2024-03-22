@@ -1,6 +1,6 @@
 *TB_SUN_TR_SKY130NM/TB_NCM
 *----------------------------------------------------------------
-* Include
+* Include - Standard includes, assuming no specific fast models
 *----------------------------------------------------------------
 #ifdef Lay
 .include ../../../work/lpe/CNR_GR06_main_lpe.spi
@@ -9,59 +9,50 @@
 #endif
 
 *-----------------------------------------------------------------
-* OPTIONS
+* OPTIONS - Operating at an elevated temperature for the fast corner
 *-----------------------------------------------------------------
 .option TNOM=125 GMIN=1e-15
 
 *-----------------------------------------------------------------
-* PARAMETERS
+* PARAMETERS - Defining simulation parameters, with some adjusted for fast conditions
 *-----------------------------------------------------------------
 .param TRF = 100p
-
 .param t_start = 0.5u
 .param t_start_del = {t_start + TRF}
-
-*- 8 MHz clock frequency
 .param PERIOD_CLK = 500n
-
-*- 25% duty-cycle clock
 .param PW_CLK = PERIOD_CLK/2
 
-*- Supply, vdda is set in includes
-.param AVDD = {vdda}
-*-----------------------------------------------------------------* FORCE
+* Fast corner adjustments:
+* Decreasing the threshold voltages slightly to represent faster transistor switching
+.param nmos_vth_fast = 0.0   ; Adjusted for faster NMOS
+.param pmos_vth_fast = -0.003 ; Adjusted for faster PMOS
+.param AVDD_fast = 1.25       ; Optionally increased supply for fast corner
+
+*-----------------------------------------------------------------
+* FORCE - Applying potential fast corner conditions
 *-----------------------------------------------------------------
 VSS  VSS  0  dc 0
-VDD  VDD_1V8 0 dc 1.2
+VDD  VDD_1V8 0 dc {AVDD_fast}
 Vdref Vdref 0 dc 1.2
 
-VT2 VT2 0 dc 0.0
-VT1 VT1 0 dc 0.003
+* Using adjusted threshold voltages for hypothetical signal sources (if applicable)
+VT2 VT2 0 dc {nmos_vth_fast}
+VT1 VT1 0 dc {pmos_vth_fast}
 
-*VT1 VT1 0 dc 0 pulse -0.3 0.3 {t_start} {TRF} {TRF} {40000n} {80000n}
-*VT2 VT2 0 dc 0 pulse -0.3 0.3 {t_start+40000n} {TRF} {TRF} {40000n} {80000n}
-
-*VT2  VT2 0 SIN(0 0.25 10000 0 0 180)
-*VT1  VT1 0 SIN(0 0.25 10000 0 0)
-
+* Assuming other conditions remain unchanged
 VBP VBP 0 dc 0.08
 VBN VBN 0 dc 1.12
 
 VCLK Clk 0 dc 0 pulse 0 1.2 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
 *-----------------------------------------------------------------
-* DUT
+* DUT - Include the device under test as before
 *-----------------------------------------------------------------
 .include ../xdut.spi
-*----------------------------------------------------------------
-* MEASURES
-*----------------------------------------------------------------
-
 
 *----------------------------------------------------------------
-* PROBE
+* PROBE and MEASURES - Unchanged for debugging and analysis
 *----------------------------------------------------------------
-
 #ifdef Debug
 .save all
 #else
@@ -69,7 +60,7 @@ VCLK Clk 0 dc 0 pulse 0 1.2 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 #endif
 
 *----------------------------------------------------------------
-* NGSPICE control
+* NGSPICE control - Running the simulation with transient analysis
 *----------------------------------------------------------------
 .control
 set num_threads=8
@@ -82,10 +73,11 @@ write
 
 run
 set filetype=ascii
-write output_data.txt V(Voc)
+write "output_data_fast.txt" V(Voc)
 .quit
 quit
 
 .endc
 
 .end
+
