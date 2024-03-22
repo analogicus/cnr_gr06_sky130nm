@@ -23,7 +23,7 @@ wulff
 # Changelog/Plan
 | Version | Status | Comment|
 | :-| :-| :-|
-|0.1.0 | :x: | Make something |
+|0.5.0 | :x: | Make something |
 
 
 # Signal interface
