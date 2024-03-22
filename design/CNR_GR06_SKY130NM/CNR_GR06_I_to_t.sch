@@ -39,7 +39,7 @@ lab=I1}
 N 160 -210 250 -210 {
 lab=#net3}
 N -100 190 -100 240 {
-lab=VSS}
+lab=DAC+}
 N -100 160 70 160 {
 lab=VSS}
 N -10 160 -10 240 {
@@ -146,9 +146,6 @@ N 80 370 100 370 {
 lab=Clk_1}
 N 80 390 100 390 {
 lab=Clk_2}
-N -100 240 -10 240 {
-lab=VSS}
-N -100 -380 -10 -380 {}
 C {devices/ipin.sym} -320 70 0 0 {name=p2 lab=I2}
 C {devices/ipin.sym} -300 -380 0 0 {name=p3 lab=VDD_1V8}
 C {devices/ipin.sym} -360 500 0 0 {name=p4 lab=VSS}
@@ -200,8 +197,8 @@ C {devices/ipin.sym} -300 -310 0 0 {name=p35 lab=DAC-
 }
 C {devices/lab_wire.sym} -250 -340 0 1 {name=p36 sig_type=std_logic lab=DAC+}
 C {devices/lab_wire.sym} -250 -310 0 1 {name=p37 sig_type=std_logic lab=DAC-}
-C {devices/lab_wire.sym} -100 280 0 1 {name=p32 sig_type=std_logic lab=DAC+}
-C {devices/lab_wire.sym} -100 -400 0 1 {name=p33 sig_type=std_logic lab=DAC-}
+C {devices/lab_wire.sym} -100 240 0 1 {name=p32 sig_type=std_logic lab=DAC+}
+C {devices/lab_wire.sym} -100 -380 0 1 {name=p33 sig_type=std_logic lab=DAC-}
 C {CNR_GR06_SKY130NM/CNR_GR06_op_amp.sym} 560 -80 0 0 {name=x2}
 C {devices/ipin.sym} 390 -50 0 0 {name=p38 lab=VBN
 }
