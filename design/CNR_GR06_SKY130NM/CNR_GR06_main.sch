@@ -114,12 +114,6 @@ N 100 -80 100 -10 {
 lab=#net2}
 N 100 -70 270 -70 {
 lab=#net2}
-N 20 -100 100 -80 {
-lab=#net2}
-N 40 -140 40 -80 {
-lab=#net3}
-N 20 -80 40 -80 {
-lab=#net3}
 N 250 90 260 90 {
 lab=SUP}
 N 210 130 310 130 {
@@ -136,6 +130,14 @@ N -370 60 -360 -80 {
 lab=Vref}
 N -360 -80 -340 -80 {
 lab=Vref}
+N 30 -100 40 -100 {
+lab=#net3}
+N 40 -140 40 -100 {
+lab=#net3}
+N 20 -100 100 -80 {
+lab=#net2}
+N 20 -80 30 -100 {
+lab=#net3}
 C {cborder/border_s.sym} 380 350 0 0 {
 user="njaalru"
 company="GR06"}
