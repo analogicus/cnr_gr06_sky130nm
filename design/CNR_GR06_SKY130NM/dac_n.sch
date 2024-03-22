@@ -14,13 +14,13 @@ lab=#net1}
 N -60 10 110 10 {
 lab=#net1}
 N 160 70 160 100 {
-lab=VDD_1V8}
+lab=VSS}
 N 160 -100 160 -80 {
-lab=VSS}
-N 160 180 160 200 {
-lab=VSS}
-N 160 -180 160 -150 {
 lab=VDD_1V8}
+N 160 180 160 200 {
+lab=VDD_1V8}
+N 160 -180 160 -150 {
+lab=VSS}
 N 110 10 160 10 {
 lab=#net1}
 N 160 -40 160 10 {
@@ -28,11 +28,11 @@ lab=#net1}
 N 160 10 160 30 {
 lab=#net1}
 N 100 70 130 70 {
-lab=Vdref}
+lab=VDD_1V8}
 N 100 70 100 200 {
-lab=Vdref}
+lab=VDD_1V8}
 N 100 200 130 200 {
-lab=Vdref}
+lab=VDD_1V8}
 N 190 200 220 200 {
 lab=Vodn}
 N 220 70 220 200 {
@@ -92,7 +92,7 @@ lab=VSS}
 N 90 -140 110 -140 {
 lab=VSS}
 N 80 130 100 130 {
-lab=Vdref}
+lab=VDD_1V8}
 N -60 -120 -60 -110 {
 lab=#net1}
 C {cborder/border_s.sym} 550 330 0 0 {
@@ -190,9 +190,9 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/lab_wire.sym} 90 -140 0 0 {name=p8 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 160 -150 0 1 {name=p1 sig_type=std_logic lab=VDD_1V8}
-C {devices/lab_wire.sym} 160 100 0 1 {name=p2 sig_type=std_logic lab=VDD_1V8}
-C {devices/lab_wire.sym} 160 180 0 1 {name=p5 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 160 -100 0 1 {name=p6 sig_type=std_logic lab=VSS}
-C {devices/ipin.sym} 80 130 0 0 {name=p19 lab=Vdref}
-C {devices/lab_wire.sym} 50 170 0 1 {name=p9 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_wire.sym} 160 -100 0 1 {name=p1 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_wire.sym} 160 180 0 1 {name=p2 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_wire.sym} 160 100 0 1 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 160 -150 0 1 {name=p6 sig_type=std_logic lab=VSS}
+C {devices/ipin.sym} 80 95 0 0 {name=p19 lab=Vdref}
+C {devices/lab_wire.sym} 100 170 0 0 {name=p9 sig_type=std_logic lab=VDD_1V8}
