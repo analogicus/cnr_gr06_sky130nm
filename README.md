@@ -1,7 +1,7 @@
 # CNR_GR06_SKY130NM
 
 ## Who
-Njål and Alveres developed this module.
+Njål and Alvaro developed this module.
 
 ## Why
 The CNR_GR06_SKY130NM module was developed to address specific needs within our project, aiming to enhance performance, reliability, and scalability. The primary motivation behind creating this module was to implement a robust temperature sensor with a sigma-delta modulator suitable for a wide range of applications, ensuring high precision and reliability in signal conversion processes.
