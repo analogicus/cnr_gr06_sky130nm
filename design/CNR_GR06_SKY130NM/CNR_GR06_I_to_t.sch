@@ -88,14 +88,10 @@ N 50 -20 190 -20 {
 lab=#net6}
 N 190 -20 190 70 {
 lab=#net6}
-N 290 -90 410 -90 {
-lab=#net3}
 N 290 -210 290 -90 {
 lab=#net3}
 N 250 -210 290 -210 {
 lab=#net3}
-N 290 -70 410 -70 {
-lab=#net6}
 N 290 -70 290 70 {
 lab=#net6}
 N 160 70 290 70 {
@@ -149,6 +145,8 @@ lab=Clk_2}
 N -100 240 -10 240 {
 lab=VSS}
 N -100 -380 -10 -380 {}
+N 290 -70 410 -90 {}
+N 290 -90 410 -70 {}
 C {devices/ipin.sym} -320 70 0 0 {name=p2 lab=I2}
 C {devices/ipin.sym} -300 -380 0 0 {name=p3 lab=VDD_1V8}
 C {devices/ipin.sym} -360 500 0 0 {name=p4 lab=VSS}
