@@ -34,10 +34,6 @@ N 900 -700 910 -700 {
 lab=Vp}
 N 900 -720 910 -720 {
 lab=Vn}
-N 910 -720 960 -720 {
-lab=Vn}
-N 910 -700 960 -700 {
-lab=Vp}
 C {cborder/border_s.sym} 1250 -170 0 0 {
 user="wulff"
 company="wulff"}
