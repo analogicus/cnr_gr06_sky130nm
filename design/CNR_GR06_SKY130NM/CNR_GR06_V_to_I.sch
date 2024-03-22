@@ -91,9 +91,9 @@ C {devices/ipin.sym} 400 -390 0 0 {name=p5 lab=V11
 C {devices/ipin.sym} 1320 -390 0 1 {name=p6 lab=V22
 
 }
-C {sky130_fd_pr/nfet_01v8.sym} 470 -390 2 1 {name=M1
+C {sky130_fd_pr/nfet_01v8.sym} 1260 -390 0 1 {name=M1
 L=1
-W=0.5
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
@@ -105,9 +105,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 730 -580 2 1 {name=M2
+C {sky130_fd_pr/nfet_01v8.sym} 1000 -580 0 1 {name=M2
 L=1
-W=0.5
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
@@ -119,9 +119,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 1220 -580 2 1 {name=M3
+C {sky130_fd_pr/nfet_01v8.sym} 510 -580 0 1 {name=M3
 L=1
-W=0.5
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
@@ -133,9 +133,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 510 -580 2 0 {name=M4
+C {sky130_fd_pr/nfet_01v8.sym} 470 -390 0 0 {name=M4
 L=1
-W=0.5
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
@@ -147,9 +147,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 1000 -580 2 0 {name=M5
+C {sky130_fd_pr/nfet_01v8.sym} 730 -580 0 0 {name=M5
 L=1
-W=0.5
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
@@ -161,9 +161,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 1260 -390 2 0 {name=M6
+C {sky130_fd_pr/nfet_01v8.sym} 1220 -580 0 0 {name=M6
 L=1
-W=0.5
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'"
