@@ -20,23 +20,11 @@
 
 .param AVDD = {vdda}
 
-.param TRF = 100p
-
-.param t_start = 0.5u
-.param t_start_del = {t_start + TRF}
-
-*- 8 MHz clock frequency
-.param PERIOD_CLK = 1u
-
-*- 25% duty-cycle clock
-.param PW_CLK = PERIOD_CLK/2
 *-----------------------------------------------------------------
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0  dc 0
 VDD  VDD_1V8 0 dc {AVDD}
-
-VCLK SUP 0 dc 0 pulse 0 1.8 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
 *-----------------------------------------------------------------
 * DUT
@@ -58,8 +46,6 @@ VCLK SUP 0 dc 0 pulse 0 1.8 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 .save ${VPORTS}
 #endif
 
-*.save v(vp,vn)
-
 *----------------------------------------------------------------
 * NGSPICE control
 *----------------------------------------------------------------
@@ -69,9 +55,9 @@ set color0=white
 set color1=black
 unset askquit
 
-optran 0 0 0 10n 10u 0
+optran 1 1 1 10n 10u 0
 
-tran 1n 2u
+dc TEMP -40 125 5
 write
 quit
 
