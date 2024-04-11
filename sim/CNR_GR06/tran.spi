@@ -26,7 +26,7 @@
 .param t_start_del = {t_start + TRF}
 
 *- 8 MHz clock frequency
-.param PERIOD_CLK = 1u
+.param PERIOD_CLK = 0.5u
 
 *- 25% duty-cycle clock
 .param PW_CLK = PERIOD_CLK/2
@@ -35,8 +35,9 @@
 *-----------------------------------------------------------------
 VSS  VSS  0  dc 0
 VDD  VDD_1V8 0 dc {AVDD}
+Vref Vref 0 dc 0.2
 
-VCLK SUP 0 dc 0 pulse 0 1.8 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
+VCLK Clk 0 dc 0 pulse 0 1.8 {t_start} {TRF} {TRF} {PW_CLK} {PERIOD_CLK}
 
 *-----------------------------------------------------------------
 * DUT
@@ -71,7 +72,7 @@ unset askquit
 
 optran 0 0 0 10n 10u 0
 
-tran 1n 2u
+tran 1n 10u
 write
 quit
 

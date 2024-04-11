@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut CNR_GR06
-XDUT VDD_1V8 Vcap SUP VSS  CNR_GR06
+XDUT VDD_1V8 VSS Clk Vcap VDD_1V8 VSS Vref Ibias Clk Vout  CNR_GR06
