@@ -4,3 +4,4 @@ corner:
 ngspice:
   library: CNR_GR06_SKY130NM
   cell: CNR_GR06_main
+

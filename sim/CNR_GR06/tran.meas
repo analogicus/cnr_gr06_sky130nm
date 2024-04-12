@@ -5,10 +5,12 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-print (I1)
-print (I2)
-print (Vp)
-print (Vn)
+meas tran t1 when v(Vout)=1.6 cross=3
+meas tran t2 when v(Vout)=1.6 cross=5
+print ('1/(t2-t1))
+
+
+print (PARAM)
 
 echo "MEAS_END"
 .endc
