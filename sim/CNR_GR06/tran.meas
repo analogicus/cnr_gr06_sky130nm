@@ -7,6 +7,7 @@ echo "MEAS_START"
 
 meas tran t1 when v(Vout)=1.6 cross=3
 meas tran t2 when v(Vout)=1.6 cross=5
+
 print ('1/(t2-t1))
 
 
