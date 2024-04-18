@@ -1,0 +1,48 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713452818
+<< locali >>
+rect -200 3680 2100 3760
+rect -140 3620 340 3680
+rect 720 3620 1200 3680
+rect 1580 3620 2060 3680
+rect -40 100 420 140
+rect 720 100 1180 140
+rect 1460 100 1920 140
+rect -100 0 2000 100
+<< metal1 >>
+rect 40 2600 140 3520
+use sky130_fd_pr__nfet_01v8_TU76PP  sky130_fd_pr__nfet_01v8_TU76PP_0
+timestamp 1713187910
+transform 1 0 1696 0 1 470
+box -296 -370 296 370
+use sky130_fd_pr__nfet_01v8_TU76PP  sky130_fd_pr__nfet_01v8_TU76PP_1
+timestamp 1713187910
+transform 1 0 196 0 1 470
+box -296 -370 296 370
+use sky130_fd_pr__nfet_01v8_TU76PP  sky130_fd_pr__nfet_01v8_TU76PP_2
+timestamp 1713187910
+transform 1 0 956 0 1 470
+box -296 -370 296 370
+use sky130_fd_pr__pfet_01v8_UJRBNN  sky130_fd_pr__pfet_01v8_UJRBNN_0
+timestamp 1713187910
+transform 1 0 1816 0 1 3063
+box -296 -603 296 603
+use sky130_fd_pr__pfet_01v8_UJRBNN  sky130_fd_pr__pfet_01v8_UJRBNN_1
+timestamp 1713187910
+transform 1 0 496 0 1 1603
+box -296 -603 296 603
+use sky130_fd_pr__pfet_01v8_UJRBNN  sky130_fd_pr__pfet_01v8_UJRBNN_2
+timestamp 1713187910
+transform 1 0 1402 0 1 1603
+box -296 -603 296 603
+use sky130_fd_pr__pfet_01v8_UJRBNN  sky130_fd_pr__pfet_01v8_UJRBNN_3
+timestamp 1713187910
+transform 1 0 96 0 1 3063
+box -296 -603 296 603
+use sky130_fd_pr__pfet_01v8_UJRBNN  sky130_fd_pr__pfet_01v8_UJRBNN_4
+timestamp 1713187910
+transform 1 0 956 0 1 3063
+box -296 -603 296 603
+<< end >>

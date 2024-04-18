@@ -1,0 +1,101 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713382110
+<< checkpaint >>
+rect -1260 -2460 2460 2126
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+rect 0 -1200 200 -1000
+use SUNTR_NCHL  SUNTR_NCHL_0
+timestamp 1713380723
+transform 1 0 0 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_1
+timestamp 1713380723
+transform 1 0 200 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_2
+timestamp 1713380723
+transform 1 0 400 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_3
+timestamp 1713380723
+transform 1 0 600 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_4
+timestamp 1713380723
+transform 1 0 800 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_5
+timestamp 1713380723
+transform 1 0 1000 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_6
+timestamp 1713380723
+transform 1 0 1200 0 1 1800
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_7
+timestamp 1713380723
+transform 1 0 0 0 1 0
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_8
+timestamp 1713380723
+transform 1 0 200 0 1 0
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_9
+timestamp 1713380723
+transform 1 0 400 0 1 0
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_10
+timestamp 1713380723
+transform 1 0 600 0 1 0
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_11
+timestamp 1713380723
+transform 1 0 800 0 1 0
+box 0 -1200 200 866
+use SUNTR_NCHL  SUNTR_NCHL_12
+timestamp 1713380723
+transform 1 0 1000 0 1 0
+box 0 -1200 200 866
+use SUNTR_NCHL  XM0
+timestamp 1713380723
+transform 1 0 0 0 1 600
+box 0 -1200 200 866
+use SUNTR_NCHL  XM1
+timestamp 1713380723
+transform 1 0 1 0 1 600
+box 0 -1200 200 866
+use SUNTR_NCHL  XM2
+timestamp 1713380723
+transform 1 0 2 0 1 600
+box 0 -1200 200 866
+use SUNTR_NCHL  XM3
+timestamp 1713380723
+transform 1 0 3 0 1 600
+box 0 -1200 200 866
+use SUNTR_NCHL  XM6
+timestamp 1713380723
+transform 1 0 4 0 1 600
+box 0 -1200 200 866
+use SUNTR_NCHL  XM7
+timestamp 1713380723
+transform 1 0 5 0 1 600
+box 0 -1200 200 866
+use SUNTR_NCHL  XM8
+timestamp 1713380723
+transform 1 0 6 0 1 600
+box 0 -1200 200 866
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 D
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 G
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 256 0 0 0 S
+port 2 nsew
+flabel metal1 0 -1200 200 -1000 0 FreeSans 256 0 0 0 B
+port 3 nsew
+<< end >>

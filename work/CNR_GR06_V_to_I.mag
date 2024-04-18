@@ -1,0 +1,82 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713382109
+<< checkpaint >>
+rect -1260 -3260 1460 1460
+<< error_s >>
+rect 468 2897 503 2931
+rect 469 2878 503 2897
+rect 488 583 503 2878
+rect 522 2844 557 2878
+rect 1007 2844 1042 2878
+rect 522 583 556 2844
+rect 1008 2825 1042 2844
+rect 522 549 537 583
+rect 1027 530 1042 2825
+rect 1061 2791 1096 2825
+rect 1546 2791 1581 2825
+rect 1061 530 1095 2791
+rect 1547 2772 1581 2791
+rect 1061 496 1076 530
+rect 1566 477 1581 2772
+rect 1600 2738 1635 2772
+rect 2085 2738 2120 2772
+rect 1600 477 1634 2738
+rect 2086 2719 2120 2738
+rect 1600 443 1615 477
+rect 2105 424 2120 2719
+rect 2139 2685 2174 2719
+rect 2624 2685 2659 2719
+rect 2139 424 2173 2685
+rect 2625 2666 2659 2685
+rect 2139 390 2154 424
+rect 2644 371 2659 2666
+rect 2678 2632 2713 2666
+rect 2678 371 2712 2632
+rect 2678 337 2693 371
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+rect 0 -1200 200 -1000
+rect 0 -1600 200 -1400
+rect 0 -2000 200 -1800
+use sky130_fd_pr__nfet_01v8_6WXQK8  XM1
+timestamp 0
+transform 1 0 243 0 1 1757
+box -296 -1210 296 1210
+use sky130_fd_pr__nfet_01v8_6WXQK8  XM2
+timestamp 0
+transform 1 0 782 0 1 1704
+box -296 -1210 296 1210
+use sky130_fd_pr__nfet_01v8_6WXQK8  XM3
+timestamp 0
+transform 1 0 1321 0 1 1651
+box -296 -1210 296 1210
+use sky130_fd_pr__nfet_01v8_6WXQK8  XM4
+timestamp 0
+transform 1 0 1860 0 1 1598
+box -296 -1210 296 1210
+use sky130_fd_pr__nfet_01v8_6WXQK8  XM5
+timestamp 0
+transform 1 0 2399 0 1 1545
+box -296 -1210 296 1210
+use sky130_fd_pr__nfet_01v8_6WXQK8  XM6
+timestamp 0
+transform 1 0 2938 0 1 1492
+box -296 -1210 296 1210
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 VDD_1V8
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 I2
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 256 0 0 0 I1
+port 2 nsew
+flabel metal1 0 -1200 200 -1000 0 FreeSans 256 0 0 0 V22
+port 3 nsew
+flabel metal1 0 -1600 200 -1400 0 FreeSans 256 0 0 0 V11
+port 4 nsew
+flabel metal1 0 -2000 200 -1800 0 FreeSans 256 0 0 0 VSS
+port 5 nsew
+<< end >>

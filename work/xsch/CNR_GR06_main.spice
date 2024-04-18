@@ -1,0 +1,538 @@
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_main.sch
+.subckt CNR_GR06_main VDD_1V8 VSS Vn Vp Vop Von Clk_1 Clk_2 Clk VT1 VT2 Vocn DACN DACP Vdref VBN
++ VBP
+*.ipin VDD_1V8
+*.ipin VSS
+*.opin Vn
+*.opin Vp
+*.opin Vop
+*.opin Von
+*.opin Clk_1
+*.opin Clk_2
+*.ipin Clk
+*.ipin VT1
+*.ipin VT2
+*.opin Vocn
+*.opin DACN
+*.opin DACP
+*.ipin Vdref
+*.ipin VBN
+*.ipin VBP
+x1 VDD_1V8 Vn net5 net6 Vp VSS CNR_GR06
+x2 VDD_1V8 DACN DACP VT1 Vop VBP Von VBN VT2 Clk_1 Clk Clk_2 VSS CNR_GR06_I_to_t
+x5 VDD_1V8 Vdref net3 DACP VSS dac
+x3 VDD_1V8 Clk Vocn net7 net2 net1 VSS comparator
+x4 VDD_1V8 Vdref net4 DACN VSS dac_n
+.ends
+
+* expanding   symbol:  CNR_GR06_SKY130NM/CNR_GR06.sym # of pins=6
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06.sch
+.subckt CNR_GR06 VDD_1V8 Vn I2 I1 Vp VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.opin I2
+*.opin I1
+*.opin Vn
+*.opin Vp
+x1 VDD_1V8 Vn Vp VSS CNR_GR06_test
+x2 VDD_1V8 I2 I1 net1 net2 VSS CNR_GR06_V_to_I
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/CNR_GR06_I_to_t.sym # of pins=13
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_I_to_t.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_I_to_t.sch
+.subckt CNR_GR06_I_to_t VDD_1V8 DAC+ DAC- I1 Vop VBP Von VBN I2 Clk_1 Clk Clk_2 VSS
+*.ipin I2
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin I1
+*.ipin Clk
+*.opin Von
+*.opin Vop
+*.opin Clk_1
+*.opin Clk_2
+*.ipin DAC+
+*.ipin DAC-
+*.ipin VBN
+*.ipin VBP
+XC1 net2 net1 sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=27 m=27
+XC2 net3 I1 sky130_fd_pr__cap_mim_m3_1 W=42 L=42 MF=42 m=42
+XC3 net5 net4 sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=27 m=27
+XC4 net6 I2 sky130_fd_pr__cap_mim_m3_1 W=42 L=42 MF=42 m=42
+XC5 net6 Von sky130_fd_pr__cap_mim_m3_1 W=42 L=42 MF=42 m=42
+XC6 net3 Vop sky130_fd_pr__cap_mim_m3_1 W=42 L=42 MF=42 m=42
+x9 VDD_1V8 Clk Clk_1 Clk_2 VSS Non_overlapping_clock
+x2 VDD_1V8 VBP Vop net3 Von net6 VBN VSS CNR_GR06_op_amp
+XM12 net5 Clk_2 net6 VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net5 Clk_1 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net4 Clk_2 DAC+ VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 I2 Clk_1 net4 VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 I1 Clk_1 net1 VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net2 Clk_2 net3 VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 net2 Clk_1 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net1 Clk_2 DAC- VSS sky130_fd_pr__nfet_01v8 L=1 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/dac.sym # of pins=5
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/dac.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/dac.sch
+.subckt dac VDD_1V8 Vdref Vid Vod VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin Vid
+*.opin Vod
+*.ipin Vdref
+XM3 net2 Vid VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 Vid VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 Vod Vid VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Vod net1 Vdref VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 Vod Vid Vdref VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 Vod net1 VSS VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/comparator.sym # of pins=7
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/comparator.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/comparator.sch
+.subckt comparator VDD_1V8 Clk Vocn Vocp Vref_c Vin_c VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin Vin_c
+*.opin Vocn
+*.ipin Clk
+*.ipin Vref_c
+XM1 Vocn Clk net5 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net5 net4 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net1 Vref_c VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net4 net3 net2 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 net6 Vocn VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net4 Clk net6 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 net2 Vin_c VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM9 net3 Clk VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM10 Vocn net4 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 Vocn Clk net4 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM12 net4 Vocn VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM13 Vocn net3 net1 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM14 net3 Clk VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 VDD_1V8 VDD_1V8 VDD_1V8 VDD_1V8 sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/dac_n.sym # of pins=5
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/dac_n.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/dac_n.sch
+.subckt dac_n VDD_1V8 Vdref Vid Vod VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin Vid
+*.opin Vod
+*.ipin VDD_1V8
+XM3 net1 Vid VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 Vid VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 Vod Vid VDD_1V8 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Vod net1 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 Vod Vid VSS VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 Vod net1 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/CNR_GR06_test.sym # of pins=4
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_test.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_test.sch
+.subckt CNR_GR06_test VDD_1V8 Vn Vp VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.opin Vn
+*.opin Vp
+XM1 net4 net3 net11 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net3 net3 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net11 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net4 net4 net12 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 net13 net13 net14 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net14 net13 net12 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 net12 net13 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM9 Vn Vn net7 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM10 net6 Vn net8 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 net8 net8 net7 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM12 net7 net8 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM13 Vp net3 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM14 net5 net3 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net3 net4 net10 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM15 net10 net9 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM16 net9 net9 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM17 net4 net4 net9 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM18 net4 net4 net9 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM19 net13 net4 net15 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM20 net15 net9 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM21 net9 net9 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM22 Vn net4 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM23 net6 net4 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM24 net5 Vp net2 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM25 net2 net2 net1 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM26 Vp Vp net1 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM27 net1 net2 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/CNR_GR06_V_to_I.sym # of pins=6
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_V_to_I.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_V_to_I.sch
+.subckt CNR_GR06_V_to_I VDD_1V8 I2 I1 V22 V11 VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.opin I1
+*.opin I2
+*.ipin V11
+*.ipin V22
+XM1 net2 V22 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 VDD_1V8 net2 I2 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 VDD_1V8 net1 net1 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 V11 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 VDD_1V8 net1 I1 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 VDD_1V8 net2 net2 VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/Non_overlapping_clock.sym # of pins=5
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/Non_overlapping_clock.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/Non_overlapping_clock.sch
+.subckt Non_overlapping_clock VDD_1V8 Clk Clk_1 Clk_2 VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin Clk
+*.opin Clk_1
+*.opin Clk_2
+x1 net1 Clk VSS VSS SUNTR_NCHLCM
+x14 net1 Clk VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x2 net2 net4 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x3 net2 Clk VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x4 net2 Clk net3 net3 SUNTR_NCHLCM
+x5 net3 net4 VSS VSS SUNTR_NCHLCM
+x6 net5 net7 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x7 net5 net1 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x8 net5 net1 net6 net6 SUNTR_NCHLCM
+x9 net6 net7 VSS VSS SUNTR_NCHLCM
+x10 net8 net2 VSS VSS SUNTR_NCHLCM
+x11 net8 net2 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x12 net9 net8 VSS VSS SUNTR_NCHLCM
+x13 net9 net8 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x15 net10 net9 VSS VSS SUNTR_NCHLCM
+x16 net10 net9 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x17 net11 net5 VSS VSS SUNTR_NCHLCM
+x18 net11 net5 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x19 net12 net11 VSS VSS SUNTR_NCHLCM
+x20 net12 net11 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x21 Clk_2 net4 VSS VSS SUNTR_NCHLCM
+x25 Clk_1 net7 VSS VSS SUNTR_NCHLCM
+x26 Clk_1 net7 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x22 Clk_2 net4 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x23 net13 net12 VSS VSS SUNTR_NCHLCM
+x24 net13 net12 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x27 net14 net13 VSS VSS SUNTR_NCHLCM
+x28 net14 net13 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x29 net15 net10 VSS VSS SUNTR_NCHLCM
+x30 net15 net10 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x31 net16 net15 VSS VSS SUNTR_NCHLCM
+x32 net16 net15 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x33 net17 net16 VSS VSS SUNTR_NCHLCM
+x34 net17 net16 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x35 net18 net14 VSS VSS SUNTR_NCHLCM
+x36 net18 net14 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x37 net19 net18 VSS VSS SUNTR_NCHLCM
+x38 net19 net18 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x39 net20 net17 VSS VSS SUNTR_NCHLCM
+x40 net20 net17 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x41 net21 net20 VSS VSS SUNTR_NCHLCM
+x42 net21 net20 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x43 net22 net21 VSS VSS SUNTR_NCHLCM
+x44 net22 net21 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x45 net23 net22 VSS VSS SUNTR_NCHLCM
+x46 net23 net22 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x47 net10 net9 VSS VSS SUNTR_NCHLCM
+x48 net10 net9 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x49 net15 net10 VSS VSS SUNTR_NCHLCM
+x50 net15 net10 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x51 net16 net15 VSS VSS SUNTR_NCHLCM
+x52 net16 net15 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x53 net17 net16 VSS VSS SUNTR_NCHLCM
+x54 net17 net16 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x55 net24 net23 VSS VSS SUNTR_NCHLCM
+x56 net24 net23 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x57 net25 net24 VSS VSS SUNTR_NCHLCM
+x58 net25 net24 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x59 net26 net25 VSS VSS SUNTR_NCHLCM
+x60 net26 net25 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x61 net7 net26 VSS VSS SUNTR_NCHLCM
+x62 net7 net26 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x63 net27 net19 VSS VSS SUNTR_NCHLCM
+x64 net27 net19 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x65 net28 net27 VSS VSS SUNTR_NCHLCM
+x66 net28 net27 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x67 net29 net28 VSS VSS SUNTR_NCHLCM
+x68 net29 net28 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x69 net30 net29 VSS VSS SUNTR_NCHLCM
+x70 net30 net29 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x71 net31 net30 VSS VSS SUNTR_NCHLCM
+x72 net31 net30 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x73 net32 net31 VSS VSS SUNTR_NCHLCM
+x74 net32 net31 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x75 net33 net32 VSS VSS SUNTR_NCHLCM
+x76 net33 net32 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+x77 net4 net33 VSS VSS SUNTR_NCHLCM
+x78 net4 net33 VDD_1V8 VDD_1V8 SUNTR_PCHLCM
+.ends
+
+
+* expanding   symbol:  CNR_GR06_SKY130NM/CNR_GR06_op_amp.sym # of pins=8
+** sym_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_op_amp.sym
+** sch_path: /home/alvaros/aicex/ip/cnr_gr06_sky130nm/design/CNR_GR06_SKY130NM/CNR_GR06_op_amp.sch
+.subckt CNR_GR06_op_amp VDD_1V8 Vbiasp Vop Vp Von Vn Vbiasn VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.opin Vop
+*.ipin Vn
+*.ipin Vp
+*.ipin Vbiasp
+*.ipin Vbiasn
+*.opin Von
+XM9 Von net1 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM14 Von net2 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net2 net4 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net1 Vbiasp VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net4 Vbiasp VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net5 net1 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM5 Vop net4 VDD_1V8 VDD_1V8 sky130_fd_pr__pfet_01v8 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 net3 Vbiasn VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net4 Vp net3 net3 sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 net5 net5 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM10 Vop net5 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 net3 Vbiasn VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM12 net1 Vn net3 net3 sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM13 net2 net2 VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  SUN_TR_SKY130NM/SUNTR_NCHLCM.sym # of pins=4
+** sym_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_NCHLCM.sym
+** sch_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_NCHLCM.sch
+.subckt SUNTR_NCHLCM D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM0 N0 G S B SUNTR_NCHL
+XM1 N1 G N0 B SUNTR_NCHL
+XM2 N2 G N1 B SUNTR_NCHL
+XM3 N3 G N2 B SUNTR_NCHL
+XM6 N6 G N3 B SUNTR_NCHL
+XM7 N7 G N6 B SUNTR_NCHL
+XM8 D G N7 B SUNTR_NCHL
+.ends
+
+
+* expanding   symbol:  SUN_TR_SKY130NM/SUNTR_PCHLCM.sym # of pins=4
+** sym_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_PCHLCM.sym
+** sch_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_PCHLCM.sch
+.subckt SUNTR_PCHLCM D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM0 N0 G S B SUNTR_PCHL
+XM7 D G N0 B SUNTR_PCHL
+.ends
+
+
+* expanding   symbol:  SUN_TR_SKY130NM/SUNTR_NCHL.sym # of pins=4
+** sym_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_NCHL.sym
+** sch_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_NCHL.sch
+.subckt SUNTR_NCHL D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.36 W=1.08 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  SUN_TR_SKY130NM/SUNTR_PCHL.sym # of pins=4
+** sym_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_PCHL.sym
+** sch_path: /home/alvaros/aicex/ip/sun_tr_sky130nm/design/SUN_TR_SKY130NM/SUNTR_PCHL.sch
+.subckt SUNTR_PCHL D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.36 W=1.08 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end

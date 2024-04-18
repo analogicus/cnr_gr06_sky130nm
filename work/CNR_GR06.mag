@@ -1,0 +1,76 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713381640
+<< checkpaint >>
+rect -1260 -3260 1460 1460
+<< error_p >>
+rect 14726 5497 14761 5531
+rect 14727 5478 14761 5497
+rect 14746 5138 14761 5478
+rect 14780 5444 14815 5478
+rect 15265 5444 15300 5478
+rect 14780 5138 14814 5444
+rect 15266 5425 15300 5444
+rect 15285 5138 15300 5425
+rect 15319 5391 15354 5425
+rect 15804 5391 15839 5425
+rect 15319 5138 15353 5391
+rect 15805 5372 15839 5391
+rect 15824 3077 15839 5372
+rect 15858 5338 15893 5372
+rect 16343 5338 16378 5372
+rect 15858 3077 15892 5338
+rect 16344 5319 16378 5338
+rect 15858 3043 15873 3077
+rect 16363 3024 16378 5319
+rect 16397 5285 16432 5319
+rect 16882 5285 16917 5319
+rect 16397 3024 16431 5285
+rect 16883 5266 16917 5285
+rect 16397 2990 16412 3024
+rect 16902 2971 16917 5266
+rect 16936 5232 16971 5266
+rect 16936 2971 16970 5232
+rect 16936 2937 16951 2971
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+rect 0 -1200 200 -1000
+rect 0 -1600 200 -1400
+rect 0 -2000 200 -1800
+use CNR_GR06_test  CNR_GR06_test_0
+timestamp 1713380704
+transform 1 0 0 0 1 1800
+box 0 -1200 14258 2078
+use CNR_GR06_V_to_I  CNR_GR06_V_to_I_0
+timestamp 1713380704
+transform 1 0 14258 0 1 2600
+box 0 -2000 2939 1758
+use CNR_GR06_V_to_I  CNR_GR06_V_to_I_1
+timestamp 1713380704
+transform 1 0 0 0 1 0
+box 0 -2000 2939 1758
+use CNR_GR06_test  x1
+timestamp 1713380704
+transform 1 0 0 0 1 600
+box 0 -1200 14258 2078
+use CNR_GR06_V_to_I  x2
+timestamp 1713380704
+transform 1 0 1 0 1 600
+box 0 -2000 2939 1758
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 VDD_1V8
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 Vn
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 256 0 0 0 I2
+port 2 nsew
+flabel metal1 0 -1200 200 -1000 0 FreeSans 256 0 0 0 I1
+port 3 nsew
+flabel metal1 0 -1600 200 -1400 0 FreeSans 256 0 0 0 Vp
+port 4 nsew
+flabel metal1 0 -2000 200 -1800 0 FreeSans 256 0 0 0 VSS
+port 5 nsew
+<< end >>
