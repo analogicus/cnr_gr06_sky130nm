@@ -1,0 +1,84 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713297681
+<< checkpaint >>
+rect -1260 4843 5445 4861
+rect -1260 -660 10145 4843
+use SUNTR_PCHLCM  x3
+timestamp 1713297680
+transform 1 0 53 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x4
+timestamp 1713297680
+transform 1 0 518 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x5
+timestamp 1713297680
+transform 1 0 983 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x6
+timestamp 1713297680
+transform 1 0 1448 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x7
+timestamp 1713297680
+transform 1 0 1913 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x8
+timestamp 1713297680
+transform 1 0 2378 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x9
+timestamp 1713297680
+transform 1 0 2843 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x10
+timestamp 1713297680
+transform 1 0 3308 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_PCHLCM  x11
+timestamp 1713297680
+transform 1 0 3773 0 1 1800
+box -53 -1200 412 1801
+use SUNTR_NCHLCM  x12
+timestamp 1713297680
+transform 1 0 4238 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x13
+timestamp 1713297680
+transform 1 0 4708 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x14
+timestamp 1713297680
+transform 1 0 5178 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x15
+timestamp 1713297680
+transform 1 0 5648 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x16
+timestamp 1713297680
+transform 1 0 6118 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x17
+timestamp 1713297680
+transform 1 0 6588 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x18
+timestamp 1713297680
+transform 1 0 7058 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x19
+timestamp 1713297680
+transform 1 0 7528 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x20
+timestamp 1713297680
+transform 1 0 7998 0 1 1800
+box -53 -1200 417 1783
+use SUNTR_NCHLCM  x21
+timestamp 1713297680
+transform 1 0 8468 0 1 1800
+box -53 -1200 417 1783
+<< end >>

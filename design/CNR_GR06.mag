@@ -1,0 +1,76 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713535098
+<< checkpaint >>
+rect -1260 -34072 1262 -31551
+rect 13988 -34072 17100 -30372
+<< error_s >>
+rect 10303 514 10457 521
+rect 10285 485 10457 514
+rect 10303 -647 10457 485
+rect 10876 451 10911 485
+rect 10877 432 10911 451
+rect 10303 -774 10373 -647
+rect 10303 -800 10364 -774
+rect 10339 -808 10364 -800
+rect 10896 -817 10911 432
+rect 10930 398 10965 432
+rect 11467 398 11502 432
+rect 10930 -817 10964 398
+rect 11468 379 11502 398
+rect 10930 -851 10945 -817
+rect 11487 -870 11502 379
+rect 11521 345 11556 379
+rect 11521 -870 11555 345
+rect 11521 -904 11536 -870
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+use New_OTA  x1
+timestamp 0
+transform 1 0 0 0 1 -32812
+box 0 0 1 1
+use New_Comp  x2
+timestamp 0
+transform 1 0 1 0 1 -32812
+box 0 0 1 1
+use sky130_fd_pr__cap_mim_m3_1_5WBTX6  XC1
+timestamp 0
+transform 1 0 13715 0 1 -16259
+box -1586 -16500 1586 16500
+use sky130_fd_pr__pfet_01v8_AVX299  XM12
+timestamp 0
+transform 1 0 10625 0 1 -166
+box -322 -687 322 687
+use sky130_fd_pr__pfet_01v8_AVX299  XM13
+timestamp 0
+transform 1 0 11216 0 1 -219
+box -322 -687 322 687
+use sky130_fd_pr__pfet_01v8_AVX299  XM14
+timestamp 0
+transform 1 0 11807 0 1 -272
+box -322 -687 322 687
+use sky130_fd_pr__nfet_01v8_69T8Y3  XM24
+timestamp 0
+transform 1 0 15544 0 1 -32222
+box -296 -590 296 590
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  XQ1 $PDKPATH/libs.ref/sky130_fd_pr/mag
+array 0 7 1288 0 0 1288
+timestamp 1705271942
+transform 1 0 0 0 1 600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  XQ2
+array 0 7 1288 0 0 1288
+timestamp 1705271942
+transform 1 0 0 0 1 -800
+box 0 0 1340 1340
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 VDD_1V8
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 VSS
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 256 0 0 0 Vout
+port 2 nsew
+<< end >>
